@@ -33,9 +33,12 @@ public class Solution {
         } else {
             return false;
         }
-        System.out.println(charA);
-        System.out.println(charB);
-        return charA.toString() == charB.toString();
+       for (int i = 0; i < charA.length; i++) {
+           if (charA[i] != charB[i]) {
+               return false;
+           }
+       }
+       return true;
     }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
