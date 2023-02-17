@@ -1,24 +1,21 @@
 package tokens;
-import java.io.*;
 import java.util.*;
 
 public class Solution {
 
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
-        String s = scan.nextLine();
+        String s = scan.nextLine().trim();
         // Write your code here.
-        int n = 0;
-        String temp = null;
-        String[] array = s.split("[\\W]");
+
+        String[] array = s.trim().split("[ !,?._'@]+");
         if (s.length() >= 1 && s.length() <= 4 * Math.pow(10, 5) ) {
-            for (int i = 0; i < array.length; i++) {
-                n++;
-            }
-            System.out.println(n);
+            System.out.println(array.length);
             for (String value : array) {
                 System.out.println(value);
             }
+        } else {
+            System.out.println(0);
         }
         scan.close();
     }
